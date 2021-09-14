@@ -35,9 +35,6 @@ github:
 twitter:
   username: H4ckBalak            # change to your twitter username
   
-linkedin:
-  username: omar-elkaddafi-4742561ba
-  
 social:
   # Change to your full name.
   # It will be displayed as the default author of the posts and the copyright owner in the Footer
@@ -46,7 +43,6 @@ social:
   links:
     # The first element serves as the copyright owner's link
     - https://twitter.com/username      # change to your twitter homepage
-    - https://www.linkedin.com/in/username
     - https://github.com/username       # change to your github homepage
     
 google_site_verification: google_meta_tag_verification # change to your verification string
