@@ -4,6 +4,9 @@
   type: github
   icon: 'fab fa-github-alt'
 -
+  type: linkedin
+  icon: 'fab fa-linkedin-in'
+-
   type: twitter
   icon: 'fab fa-twitter'
 -
