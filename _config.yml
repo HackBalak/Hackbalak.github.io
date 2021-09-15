@@ -51,7 +51,7 @@ google_site_verification: google_meta_tag_verification # change to your verifica
 
 
 google_analytics:
-  id: 'G-GWSVN9D8F8'              # fill in your Google Analytics ID
+  id: ''              # fill in your Google Analytics ID
   # Google Analytics pageviews report settings
   pv:
     proxy_endpoint:   # fill in the Google Analytics superProxy endpoint of Google App Engine
@@ -84,8 +84,8 @@ avatar: https://raw.githubusercontent.com/HackBalak/Hackbalak.github.io/main/ass
 toc: true
 
 disqus:
-  comments: true  # boolean type, the global switch for posts comments.
-  shortname: 'uaigdz'    # Fill with your Disqus shortname. › https://help.disqus.com/en/articles/1717111-what-s-a-shortname
+  comments: false  # boolean type, the global switch for posts comments.
+  shortname: ''    # Fill with your Disqus shortname. › https://help.disqus.com/en/articles/1717111-what-s-a-shortname
 
 paginate: 10
 
