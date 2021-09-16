@@ -10,6 +10,7 @@ order: 4
 
 Hi, I'm [HackBalak](https://hackbalak.netlify.app/), a cybersecurity engineering student at my Last year , Future Red Teamer and Part-time bug bounty hunter .
 
+<img align="right" src="https://github.com/HackBalak/HackBalak/blob/main/cs.gif?raw=true" width="500" height="320" />
 
 
 I do hacking all the time, solving CTF challenges in many platforms like HackTheBox and TryHackme ...
