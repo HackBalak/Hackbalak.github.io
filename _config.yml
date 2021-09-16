@@ -22,9 +22,11 @@ title: HackBalak blog                          # the main title
 tagline: A hacker posts Area   # it will display as the sub-title
 
 description: >-                        # used by seo meta and the atom feed
-  A minimal, portfolio, sidebar,
-  bootstrap Jekyll theme with responsive web design
-  and focuses on text presentation.
+  HackBalak Blog,
+  A hacker posts Area,
+  Everything related to the Cybersecurity world,
+  Tutorial, write-ups, Security research,...
+  Just wanna make the internet a best learning place.
 
 # fill in the protocol & hostname for your site, e.g., 'https://username.github.io'
 url: 'https://hackbalak.github.io'
