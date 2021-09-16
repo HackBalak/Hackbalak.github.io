@@ -19,7 +19,6 @@ I have excellent problem-solving skills, I can think like a hacker, my technical
 I am always up to date with every technology , I was fascinated by IT from many years wish make me everyday motivated to learn more and more .
 
 
-<img align="right" alt="GIF" src="https://github.com/HackBalak/HackBalak/blob/main/cs.gif?raw=true" width="500" height="320" />
   
 - 💬 Ask me about anything, I am happy to help and respond ;
 
