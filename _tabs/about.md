@@ -22,18 +22,6 @@ I am always up to date with every technology , I was fascinated by IT from many 
 <img align="right" alt="GIF" src="https://github.com/HackBalak/HackBalak/blob/main/cs.gif?raw=true" width="500" height="320" />
   
 - 💬 Ask me about anything, I am happy to help and respond ;
-- 📫 Feel free to reach me on :
-
-</br>
-<a href="https://twitter.com/H4ckBalak">
-  <img align="left" alt="HackBalak | Twitter" width="22px" src="https://raw.githubusercontent.com/peterthehan/peterthehan/master/assets/twitter.svg" />
-</a>
-<a href="https://www.linkedin.com/in/omar-elkaddafi-4742561ba/">
-  <img align="left" alt="Abhishek's LinkedIN" width="22px" src="https://raw.githubusercontent.com/peterthehan/peterthehan/master/assets/linkedin.svg" />
-</a>
-
-</br>
-</br>
 
 
 **Reach me on Hacking Plateforme:**
