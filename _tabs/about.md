@@ -10,7 +10,7 @@ order: 4
 
 I'm a Cyber Security Engineering student at my Last year , Future Red Teamer and Part-time bug bounty hunter .
 
-<img align="right" src="https://github.com/HackBalak/HackBalak/blob/main/cs.gif?raw=true" width="500" height="320" >
+<p align="center"> <img align="right" src="https://github.com/HackBalak/HackBalak/blob/main/cs.gif?raw=true" width="500" height="320"></p>
 
 
 I have excellent problem-solving skills, I can think like a hacker, my technical competence is broad, and I have excellent communication skills and a passion for continual learning and development. I am comfortable working with different computer and operating systems; I can troubleshoot quickly and explain situations in plain English so everyone understands.
