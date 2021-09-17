@@ -6,7 +6,7 @@ categories: [Tutorial, Red Teaming]
 tags: [red teaming, reverse proxy, covenant C2]
 
 image:
-  src: /_posts/Aseets/set-up-nginx-c2-redirector/C2-redirector_principe.png
+  src: https://github.com/HackBalak/Hackbalak.github.io/blob/main/_posts/Aseets/set-up-nginx-c2-redirector/C2-redirector_principe.png
   width: 300   # in pixels
   height: 200   # in pixels
   alt: C2 redirector overview
