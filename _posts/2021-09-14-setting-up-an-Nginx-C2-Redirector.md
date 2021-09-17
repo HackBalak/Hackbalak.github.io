@@ -97,6 +97,7 @@ Now your Nginx redirector is ready, on your futur attack make sure to put the **
 
 The video below is the PoC of this setup ;) 
 Enjoy, and don't forget to leave a beautifull comment below ...
-![]({https://github.com/HackBalak/Hackbalak.github.io/blob/main/_posts/Aseets/set-up-nginx-c2-redirector/attack_PoC.mkv})
-<iframe width="420" height="315" src="https://github.com/HackBalak/Hackbalak.github.io/blob/main/_posts/Aseets/set-up-nginx-c2-redirector/attack_PoC.mkv" frameborder="0"></iframe>
+
+<iframe src="https://drive.google.com/file/d/1PWHL6YA1QNStP6uN2pyzY4VQjMBfsS3v/view?usp=sharing"></iframe>
+
 
