@@ -1,11 +1,12 @@
 ---
-title: Setting up an Nginx Redirector for [covenant C2](https://github.com/cobbr/Covenant).
+title: Setting up an Nginx Redirector for covenant C2
 author: HackBalak
 date: 2021-09-08 14:10:00 +0100
 categories: [Tutorial, Red Teaming]
 tags: [red teaming, reverse proxy, covenant C2]
+toc: false
 image:
-  src: Aseets/set-up-nginx-c2-redirector/C2-redirector_principe.png
+  src: ./Aseets/set-up-nginx-c2-redirector/C2-redirector_principe.png
   width: 500   # in pixels
   height: 400   # in pixels
   alt: C2 redirector overview
