@@ -61,7 +61,7 @@ Now and after getting an Idea about what is a C2 redirector, let's move to the I
 
 After Installing Covenant C2 tools on your machine and making sure that is work correctly, you will just need to keep in mind its **@ip address**, because we will need it later for the nginx setup configuration file. 
 
-Now prepare another Linux machine -in my case I am using ubuntu- and install Nginx server. 
+Now prepare another Linux machine -- in my case I am using ubuntu -- and install Nginx server on it. 
 
 The next step is nothing more than editing the _"/etc/nginx/sites-enabled/default"_ file, delete all the previous content , and add the following configuration :
 ```bash
@@ -96,7 +96,7 @@ then Restart the Nginx service.
 service nginx restart
 ```
 
-Now your Nginx redirector is ready, on your futur attack make sure to put the **@ip adsress** of the machine where nginx is installed and configured on the covenant Listener Tab.
+Now your Nginx redirector is ready, on your futur attack make sure to put the **@ip address** of the machine where nginx is installed and configured on the covenant Listener Tab.
 
 The video below is the PoC of this setup ;) 
 Enjoy, and don't forget to leave a beautifull comment below ...
