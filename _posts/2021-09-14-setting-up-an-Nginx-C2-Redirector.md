@@ -8,6 +8,9 @@ image:
   src: https://github.com/HackBalak/Hackbalak.github.io/blob/main/_posts/Aseets/set-up-nginx-c2-redirector/C2-redirector_principe.png?raw=true
   width: 600   # in pixels
   height: 400   # in pixels  
+  
+driveId: 1PWHL6YA1QNStP6uN2pyzY4VQjMBfsS3v/view
+
 ---
 
 ## What is covenanat C2 ?
@@ -98,5 +101,5 @@ Now your Nginx redirector is ready, on your futur attack make sure to put the **
 The video below is the PoC of this setup ;) 
 Enjoy, and don't forget to leave a beautifull comment below ...
 
-![][{reference}]
-[{reference}]: {https://drive.google.com/file/d/1PWHL6YA1QNStP6uN2pyzY4VQjMBfsS3v/view?usp=sharing}
+{% include googleDrivePlayer.html id=page.driveId %}
+
