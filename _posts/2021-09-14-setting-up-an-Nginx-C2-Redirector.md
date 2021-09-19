@@ -9,7 +9,7 @@ image:
   width: 600   # in pixels
   height: 400   # in pixels  
   
-driveId: 1PWHL6YA1QNStP6uN2pyzY4VQjMBfsS3v/preview
+driveId: 1wrYcCAjLUpVK_4k0k3HafbB7FKs61r3n/preview
 
 ---
 
