@@ -50,15 +50,15 @@ Otherwise, you can clone the repository on your machine and build the exe. For m
 
 Create a repository on the C:\Program Files\ location, and move the two downloaded files.
 
-![image1](./Aseets/ETW-TI/1.png)
+![image1](Aseets/ETW-TI/1.png)
 
 Then, go to Microsoft windows defender, and add that folder to windows defender exclusion.
 
-![image1](./Aseets/ETW-TI/1-1.png)
+![image1](/Aseets/ETW-TI/1-1.png)
 
 Select the SealighterTI folder and click Ok.
 
-![image1](./Aseets/ETW-TI/1-1-1.png)
+![image1](/Aseets/ETW-TI/1-1-1.png)
 
 after that you can activate windows defender real-time protection again.
 
