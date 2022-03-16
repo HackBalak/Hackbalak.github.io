@@ -50,15 +50,16 @@ Otherwise, you can clone the repository on your machine and build the exe. For m
 
 Create a repository on the C:\Program Files\ location, and move the two downloaded files.
 
-![image1](Aseets/ETW-TI/1.png)
+
+<img src="https://github.com/HackBalak/Hackbalak.github.io/blob/main/_posts/Aseets/ETW-TI/1.png?raw=true">
 
 Then, go to Microsoft windows defender, and add that folder to windows defender exclusion.
 
-![image1](/Aseets/ETW-TI/1-1.png)
+<img src="https://github.com/HackBalak/Hackbalak.github.io/blob/main/_posts/Aseets/ETW-TI/1-1.png?raw=true">
 
 Select the SealighterTI folder and click Ok.
 
-![image1](/Aseets/ETW-TI/1-1-1.png)
+<img src="https://github.com/HackBalak/Hackbalak.github.io/blob/main/_posts/Aseets/ETW-TI/1-1-1.png?raw=true">
 
 after that you can activate windows defender real-time protection again.
 
@@ -67,7 +68,7 @@ after that you can activate windows defender real-time protection again.
 
 First Open up the sealigher_provider.man in a text editor, and replace all uses of `!!SEALIGHTER_LOCATION!!` with the full path to the SealighterTI.exe binary.
 
-![image1](./Aseets/ETW-TI/2.png)
+<img src="https://github.com/HackBalak/Hackbalak.github.io/blob/main/_posts/Aseets/ETW-TI/2.png?raw=true">
 
  Then from an elevated command prompt run:
 
@@ -75,7 +76,7 @@ First Open up the sealigher_provider.man in a text editor, and replace all uses 
 wevtutil im path/to/sealigher_provider.man
 ```
 
-![image1](./Aseets/ETW-TI/3.png)
+<img src="https://github.com/HackBalak/Hackbalak.github.io/blob/main/_posts/Aseets/ETW-TI/3.png?raw=true">
 
 
 #### Step 4
@@ -89,17 +90,17 @@ Download [NSSM](https://nssm.cc/ci/nssm-2.24-101-g897c7ad.zip) ,Extract it and m
 
 We will use NSSM to run SealighterTI as a service automatically without the need to start it every time you reboot your machine.
 
-![image1](./Aseets/ETW-TI/4.png)
+<img src="https://github.com/HackBalak/Hackbalak.github.io/blob/main/_posts/Aseets/ETW-TI/4.png?raw=true">
 
 open an Administrator command prompt, change directory to the location of the nssm exe, and run the following command.
 
 `nssm install SealighterTI`
 
-![image1](./Aseets/ETW-TI/5.png)
+<img src="https://github.com/HackBalak/Hackbalak.github.io/blob/main/_posts/Aseets/ETW-TI/5.png?raw=true">
 
 a window will pop-up as the picture shows above. you just have to fill in the path of the sealighterTI folder and executable and the argument `-d` . Then click on **Install service** .
 
-![image1](./Aseets/ETW-TI/5-1.png)
+<img src="https://github.com/HackBalak/Hackbalak.github.io/blob/main/_posts/Aseets/ETW-TI/5-1.png?raw=true">
 
 And finally the SealighterTI service is installed succesfully.
 
@@ -108,20 +109,20 @@ And finally the SealighterTI service is installed succesfully.
 
 Open windows `services.msc` , Find SealighterTI service and click on Start.
 
-![image1](./Aseets/ETW-TI/6.png)
+<img src="https://github.com/HackBalak/Hackbalak.github.io/blob/main/_posts/Aseets/ETW-TI/6.png?raw=true">
 
 and you're done.
 
 Now go to Event Viewer and check The Sealighter/Operational logs.
 
-![image1](./Aseets/ETW-TI/7.png)
+<img src="https://github.com/HackBalak/Hackbalak.github.io/blob/main/_posts/Aseets/ETW-TI/7.png?raw=true">
 
 **NOTE :** 
 
 After running the SealighterTI service, you'll discover that the number of event logs on event viewer doesn't bypass 5** event, and you may think that the TI provider doesn't log correctly.however that is not correct,But you just need to configure the Log proprieties on the right panel on event viewer, then change `The maximum log size to a bigger number ^_^`
 
 
-![image1](./Aseets/ETW-TI/7-1.png)
+<img src="https://github.com/HackBalak/Hackbalak.github.io/blob/main/_posts/Aseets/ETW-TI/7-1.png?raw=true">
 
 
 
@@ -132,7 +133,7 @@ Now it's Time to ship Microsoft-Windows-Threat-Intelligence ETW provider logs to
 + Download [Winlogbeat](https://www.elastic.co/fr/downloads/beats/winlogbeat) zip and extract it.
 + Create a Folder on `C:\Program Files\` and name it winlogbeat and move all the extracted files from the zip folder. 
 
-![image1](./Aseets/ETW-TI/a1.png)
+<img src="https://github.com/HackBalak/Hackbalak.github.io/blob/main/_posts/Aseets/ETW-TI/a1.png?raw=true">
 
 + Open `winlogbeat.yml` and add this line under the winlogbeat.event_logs .
 
@@ -155,7 +156,7 @@ Start-Service winlogbeat
 
 Finally, go to ELK and check, you'll see all the logs Ingested successfully to Kibana web Interface.
 
-![image1](./Aseets/ETW-TI/last.png)
+<img src="https://github.com/HackBalak/Hackbalak.github.io/blob/main/_posts/Aseets/ETW-TI/last.png?raw=true">
 
 
 ## Conclusion
