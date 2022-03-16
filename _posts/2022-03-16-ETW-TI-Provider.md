@@ -1,10 +1,9 @@
 ---
 title: Get started with the ETW Threat-Intelligence Provider + consume its logs + ship them to ELK stack
 author: HackBalak
-date: 2022-03-16 18:10:00 +0100
+date: 2022-03-15 18:10:00 +0100
 categories: [Blue Teaming , Threat Hunting]
 tags: [Threat Hunting, ELK stack, ETW , Threat-Intelligence , Blue Teaming, Attack Detection]
-# driveId: 1vdofrk5AzTA7H1zmlVTQsNbgpiQXWm8Z/preview
 
 ---
 
