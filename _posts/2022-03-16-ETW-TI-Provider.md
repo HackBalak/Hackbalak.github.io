@@ -10,7 +10,7 @@ tags: [Threat Hunting, ELK stack, ETW , Threat-Intelligence , Blue Teaming, Atta
 
 ### TL;DR
 
-The Microsoft-Windows-Threat-Intelligence ETW Provider is very usefull tool for Detect many kill chain Attacks such as memory injection and others.
+The Microsoft-Windows-Threat-Intelligence ETW Provider is a very useful tool to detecting many kill chain Attacks such as memory injection and others.
 
 In this blog, I will show a way to take advantage of this provider, consume its events logs and ship them to ELK stack.
 
