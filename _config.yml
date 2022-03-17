@@ -80,7 +80,7 @@ theme_mode:   # [light|dark]
 img_cdn: ''
 
 # the avatar on sidebar, support local or CORS resources
-avatar: https://raw.githubusercontent.com/HackBalak/Hackbalak.github.io/main/assets/imgs/avatar.gif
+avatar: https://raw.githubusercontent.com/HackBalak/Hackbalak.github.io/main/assets/img/avatar.gif
 
 # boolean type, the global switch for ToC in posts.
 toc: true
