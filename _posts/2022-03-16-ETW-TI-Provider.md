@@ -1,11 +1,18 @@
 ---
-title: Get started with the ETW Threat-Intelligence Provider + consume its logs + ship them to ELK stack
+title: Getting started with the Microsoft-Windows-Threat-Intelligence ETW Provider
 author: HackBalak
 date: 2022-03-15 18:10:00 +0100
-categories: [Blue Teaming , Threat Hunting]
+categories: [Blogging , Threat Hunting]
 tags: [Threat Hunting, ELK stack, ETW , Threat-Intelligence , Blue Teaming, Attack Detection]
 
 ---
+
+
+### TL;DR
+
+The Microsoft-Windows-Threat-Intelligence ETW Provider is very usefull tool for Detect many kill chain Attacks such as memory injection and others.
+
+In this blog, I will show a way to take advantage of this provider, consume its events logs and ship them to ELK stack.
 
 Before jumping to the technical steps, let's talk a little bit about the Threat Intelligence ETW(Event Tracing for Windows) Provider.
 
@@ -16,6 +23,12 @@ Before jumping to the technical steps, let's talk a little bit about the Threat 
 >
 > source : [pathtofile](https://github.com/pathtofile/SealighterTI#overview)
 
+Let's get started ...
+
+**DISCLAMER**:
+
+
+In this article, I am not going to cover the deployment of the ELK stack. I may write another blog talking about multiple ways to deploy it in your own lab. But mainly here I am just using this [docker-compose](https://github.com/deviantony/docker-elk) which will do all the boring configuration stuff on your behalf.
 
 
 ### Required Tools
@@ -26,10 +39,6 @@ Before jumping to the technical steps, let's talk a little bit about the Threat 
 *  NSSM
 *  SealighterTI
 
-**DISCLAMER**:
-
-
-In this article, I am not going to cover the deployment of the ELK stack. I may write another blog talking about multiple ways to deploy it in your own lab. But mainly here I am basing it on This [docker-compose](https://github.com/deviantony/docker-elk) which will do all the boring configuration stuff on your behalf.
 
 ## Walkthrough
 
