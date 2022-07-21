@@ -1,0 +1,170 @@
+<h3 id="tldr">TL;DR</h3>
+
+<p>The Microsoft-Windows-Threat-Intelligence ETW Provider is very usefull tool for Detect many kill chain Attacks such as memory injection and others.</p>
+
+<p>In this blog, I will show a way to take advantage of this provider, consume its events logs and ship them to ELK stack.</p>
+
+<p>Before jumping to the technical steps, let’s talk a little bit about the Threat Intelligence ETW(Event Tracing for Windows) Provider.</p>
+
+<blockquote>
+  <p>The Microsoft-Windows-Threat-Intelligence ETW Provider is an excellent tool to detect process injection, and other type of attacks. Unlike usermode hooking or in-process ETW Providers, avoiding or tampering with the Threat-Intelligence is very difficult.</p>
+
+  <p>However, to subscribe to this Provider requires a process with very special privileges, marked as Protected Process Light (PPL) ‘Anti-Malware’ or higher. To legitimately run a program at this level you must submit a driver to Microsoft to be co-signed by them, something not everyone has the inclination or reputation to do.</p>
+
+  <p>source : <a href="https://github.com/pathtofile/SealighterTI#overview">pathtofile</a></p>
+</blockquote>
+
+<p>Let’s get started …</p>
+
+<p><strong>DISCLAMER</strong>:</p>
+
+<p>In this article, I am not going to cover the deployment of the ELK stack. I may write another blog talking about multiple ways to deploy it in your own lab. But mainly here I am just using this <a href="https://github.com/deviantony/docker-elk">docker-compose</a> which will do all the boring configuration stuff on your behalf.</p>
+
+<h3 id="required-tools">Required Tools</h3>
+
+<ul>
+  <li>Windows 10 VM</li>
+  <li>ELK stack</li>
+  <li>WinlogBeat</li>
+  <li>NSSM</li>
+  <li>SealighterTI</li>
+</ul>
+
+<h2 id="walkthrough">Walkthrough</h2>
+
+<h4 id="step-1">Step 1</h4>
+<p>On a windows 10 VM, download the Assets from the links below :</p>
+
+<ul>
+  <li><a href="https://github.com/pathtofile/SealighterTI/releases">SealighterTI.exe + sealighter_provider.man</a></li>
+</ul>
+
+<p><strong>PS:</strong> Disable windows defender before downloading the SealighterTI.exe, because it will consider it malicious.</p>
+
+<p>Otherwise, you can clone the repository on your machine and build the exe. For my case, I just downloaded the pre-built binarie, it works fine.</p>
+
+<p>Check the <a href="https://github.com/pathtofile/SealighterTI">SealighterTI Project</a> for more details.</p>
+
+<h4 id="step-2">Step 2</h4>
+
+<p>Create a repository on the C:\Program Files\ location, and move the two downloaded files.</p>
+
+<p><img src="https://github.com/HackBalak/Hackbalak.github.io/blob/main/_posts/Aseets/ETW-TI/1.png?raw=true" /></p>
+
+<p>Then, go to Microsoft windows defender, and add that folder to windows defender exclusion.</p>
+
+<p><img src="https://github.com/HackBalak/Hackbalak.github.io/blob/main/_posts/Aseets/ETW-TI/1-1.png?raw=true" /></p>
+
+<p>Select the SealighterTI folder and click Ok.</p>
+
+<p><img src="https://github.com/HackBalak/Hackbalak.github.io/blob/main/_posts/Aseets/ETW-TI/1-1-1.png?raw=true" /></p>
+
+<p>after that you can activate windows defender real-time protection again.</p>
+
+<h4 id="step-3">Step 3</h4>
+
+<p>First Open up the sealigher_provider.man in a text editor, and replace all uses of <code class="language-plaintext highlighter-rouge">!!SEALIGHTER_LOCATION!!</code> with the full path to the SealighterTI.exe binary.</p>
+
+<p><img src="https://github.com/HackBalak/Hackbalak.github.io/blob/main/_posts/Aseets/ETW-TI/2.png?raw=true" /></p>
+
+<p>Then from an elevated command prompt run:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre>wevtutil im path/to/sealigher_provider.man
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p><img src="https://github.com/HackBalak/Hackbalak.github.io/blob/main/_posts/Aseets/ETW-TI/3.png?raw=true" /></p>
+
+<h4 id="step-4">Step 4</h4>
+
+<p>Download <a href="https://nssm.cc/ci/nssm-2.24-101-g897c7ad.zip">NSSM</a> ,Extract it and move it to <code class="language-plaintext highlighter-rouge">C:\Program Files\</code>.</p>
+
+<blockquote>
+  <p><strong>What is nssm.exe?</strong></p>
+
+  <p>The genuine nssm.exe file is a software component of NSSM by Iian Patterson.
+<em>Non-Sucking Service Manager</em> is a service manager for Microsoft Windows. <strong>Nssm.exe</strong> launches the Non-Sucking Service Manager program. This is not an essential Windows process and can be disabled if known to create problems. NSSM is a free utility that manages background and foreground services and processes. The program can be set to automatically restart failing services. The program also logs all progress in an Event Log, making it easier to identify applications that aren’t behaving as they should.</p>
+</blockquote>
+
+<p>We will use NSSM to run SealighterTI as a service automatically without the need to start it every time you reboot your machine.</p>
+
+<p><img src="https://github.com/HackBalak/Hackbalak.github.io/blob/main/_posts/Aseets/ETW-TI/4.png?raw=true" /></p>
+
+<p>open an Administrator command prompt, change directory to the location of the nssm exe, and run the following command.</p>
+
+<p><code class="language-plaintext highlighter-rouge">nssm install SealighterTI</code></p>
+
+<p><img src="https://github.com/HackBalak/Hackbalak.github.io/blob/main/_posts/Aseets/ETW-TI/5.png?raw=true" /></p>
+
+<p>a window will pop-up as the picture shows above. you just have to fill in the path of the sealighterTI folder and executable and the argument <code class="language-plaintext highlighter-rouge">-d</code> . Then click on <strong>Install service</strong> .</p>
+
+<p><img src="https://github.com/HackBalak/Hackbalak.github.io/blob/main/_posts/Aseets/ETW-TI/5-1.png?raw=true" /></p>
+
+<p>And finally the SealighterTI service is installed succesfully.</p>
+
+<h4 id="step-5">Step 5</h4>
+
+<p>Open windows <code class="language-plaintext highlighter-rouge">services.msc</code> , Find SealighterTI service and click on Start.</p>
+
+<p><img src="https://github.com/HackBalak/Hackbalak.github.io/blob/main/_posts/Aseets/ETW-TI/6.png?raw=true" /></p>
+
+<p>and you’re done.</p>
+
+<p>Now go to Event Viewer and check The Sealighter/Operational logs.</p>
+
+<p><img src="https://github.com/HackBalak/Hackbalak.github.io/blob/main/_posts/Aseets/ETW-TI/7.png?raw=true" /></p>
+
+<p><strong>NOTE :</strong></p>
+
+<p>After running the SealighterTI service, you’ll discover that the number of event logs on event viewer doesn’t bypass 5** event, and you may think that the TI provider doesn’t log correctly.however that is not correct,But you just need to configure the Log proprieties on the right panel on event viewer, then change <code class="language-plaintext highlighter-rouge">The maximum log size to a bigger number ^_^</code></p>
+
+<p><img src="https://github.com/HackBalak/Hackbalak.github.io/blob/main/_posts/Aseets/ETW-TI/7-1.png?raw=true" /></p>
+
+<h4 id="step-6">Step 6</h4>
+
+<p>Now it’s Time to ship Microsoft-Windows-Threat-Intelligence ETW provider logs to ELK stack.</p>
+
+<ul>
+  <li>Download <a href="https://www.elastic.co/fr/downloads/beats/winlogbeat">Winlogbeat</a> zip and extract it.</li>
+  <li>Create a Folder on <code class="language-plaintext highlighter-rouge">C:\Program Files\</code> and name it winlogbeat and move all the extracted files from the zip folder.</li>
+</ul>
+
+<p><img src="https://github.com/HackBalak/Hackbalak.github.io/blob/main/_posts/Aseets/ETW-TI/a1.png?raw=true" /></p>
+
+<ul>
+  <li>Open <code class="language-plaintext highlighter-rouge">winlogbeat.yml</code> and add this line under the winlogbeat.event_logs .</li>
+</ul>
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+</pre></td><td class="rouge-code"><pre><span class="na">winlogbeat.event_logs</span><span class="pi">:</span>
+
+  <span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s">Sealighter/Operational</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+<p>More configuration details can be found on the official elastic website.</p>
+
+<ul>
+  <li>Open powershell as administrator and change directory to <code class="language-plaintext highlighter-rouge">C:\Program Files\Winlogbeat</code>, and run commands below :</li>
+</ul>
+
+<div class="language-powershell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+</pre></td><td class="rouge-code"><pre><span class="n">PowerShell.exe</span><span class="w"> </span><span class="nt">-ExecutionPolicy</span><span class="w"> </span><span class="nx">UnRestricted</span><span class="w"> </span><span class="nt">-File</span><span class="w"> </span><span class="o">.</span><span class="nx">\install-service-winlogbeat.ps1</span><span class="w">
+</span><span class="o">.</span><span class="n">\winlogbeat.exe</span><span class="w"> </span><span class="nx">test</span><span class="w"> </span><span class="nx">config</span><span class="w"> </span><span class="nt">-c</span><span class="w"> </span><span class="o">.</span><span class="nx">\winlogbeat.yml</span><span class="w"> </span><span class="nt">-e</span><span class="w">
+</span><span class="o">.</span><span class="n">\winlogbeat.exe</span><span class="w"> </span><span class="nx">setup</span><span class="w"> </span><span class="nt">-e</span><span class="w">
+</span><span class="n">Start-Service</span><span class="w"> </span><span class="nx">winlogbeat</span><span class="w">
+
+</span></pre></td></tr></tbody></table></code></pre></div></div>
+
+<p>Finally, go to ELK and check, you’ll see all the logs Ingested successfully to Kibana web Interface.</p>
+
+<p><img src="https://github.com/HackBalak/Hackbalak.github.io/blob/main/_posts/Aseets/ETW-TI/last.png?raw=true" /></p>
+
+<h2 id="conclusion">Conclusion</h2>
+
+<p>Today, we managed to succesfully view and consume the Microsoft-Windows-Threat-Intelligence Provider events log, and ship them To ELK stack. In the Next post, I will show you how we can take advantage of this provider to detect some adversary attack like Process Injection, and to understand why Microsoft’s “Threat Intelligence Tracing” is useful and much needed in detection of modern and often obscure injection techniques.</p>
+

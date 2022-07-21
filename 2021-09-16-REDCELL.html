@@ -1,0 +1,43 @@
+<p>Redcell is an Infrastructure as Code Lab of red teamers operations , it’s built using Vagrant and Ansible , and it can be deployed and run locally .
+This lab is made of six virtual machines that seems necessary for the Cyber Kill Chain steps :</p>
+
+<ul>
+  <li>
+    <p><strong>scanVM</strong> running kali-Linux machine with needed tools like Nmap , dirsearch , …</p>
+  </li>
+  <li>
+    <p><strong>crackVM</strong> running Ubuntu machine with Hashcat tool installed</p>
+  </li>
+  <li>
+    <p><strong>covenantVM</strong> running ubuntu machine with <em>Covenant C2</em> tool installed and running on port 7443 .</p>
+  </li>
+  <li>
+    <p><strong>covenantRedirector</strong> running ubuntu machine with nginx redirector and behaving as a <em>reverse proxy</em> for the <em>covenantVM</em> C2 machine .</p>
+  </li>
+  <li>
+    <p><strong>phishingVM running</strong> ubuntu machine with gophish tool installed and running on ports 3333 and 80 .</p>
+  </li>
+  <li>
+    <p><strong>gophishRedirector</strong> running ubuntu machine with nginx redirector and behaving as a <em>reverse proxy</em> for the <em>phishingVM</em> machine .</p>
+  </li>
+</ul>
+
+<p>The lab setup is automated using vagrant and ansible automation tools.</p>
+
+<p>The picture below show the Projects working principe:</p>
+
+<p><img src="https://github.com/HackBalak/Hackbalak.github.io/blob/main/_posts/Aseets/REDCELL/REDCELL.png?raw=true" width="840" height="1200" /></p>
+
+<p>I will talk about it on the Next few coming days…</p>
+
+<p><a href="https://git.io/typing-svg"><img src="https://readme-typing-svg.herokuapp.com?font=comfortaa&amp;color=016EEA&amp;size=24&amp;width=500&amp;lines=Stay+Tunned+.+.+." alt="Typing SVG" /></a></p>
+
+<h3 id="redcells-poc">REDCELL’s PoC</h3>
+
+<p>The video below is the Poof of Concept of the <strong>REDCELL infrastructure project</strong> :</p>
+
+<div class="embed-container">
+  <iframe width="100%" height="400" src="https://drive.google.com/file/d/1vdofrk5AzTA7H1zmlVTQsNbgpiQXWm8Z/preview" frameborder="0" allowfullscreen="">
+  </iframe>
+</div>
+
