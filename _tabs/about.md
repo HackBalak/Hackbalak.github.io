@@ -6,9 +6,9 @@ order: 4
 
 ### Hey there <img src="https://media.giphy.com/media/hvRJCLFzcasrR4ia7z/giphy.gif" width="25px">, I'm HackBalak .
 
-[![Typing SVG](https://readme-typing-svg.herokuapp.com?font=comfortaa&color=016EEA&size=24&width=500&lines=Cyber+Security+engineering+student;Part-time+bug+bounty+hunter;Future+Red+Teamer;Nice+to+meet+you...)](https://git.io/typing-svg)
+[![Typing SVG](https://readme-typing-svg.herokuapp.com?font=comfortaa&color=016EEA&size=24&width=500&lines=Cyber+Security+Engineer;Part-time+bug+bounty+hunter;Red+Teamer+and+Malware+Analysis+Enthusiast;Nice+to+meet+you...)](https://git.io/typing-svg)
 
-I'm a Cyber Security Engineering student at my Last year , Future Red Teamer and Part-time bug bounty hunter .
+I'm a Cyber Security Engineer, Red Teamer, Malware Analysis Enthusiast and Part-time bug bounty hunter .
 
 <img src="https://github.com/HackBalak/HackBalak/blob/main/cs.gif?raw=true" width="500" height="320">
 
